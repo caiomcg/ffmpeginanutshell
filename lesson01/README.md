@@ -39,6 +39,19 @@ For MacOs there are two options [macports](https://www.macports.org/) and [homeb
 For Linux distros the package manager depend on the distribution itself, for Fedora [Yum](https://en.wikipedia.org/wiki/Yum_(software)) is the 
 default manager, for Arch [Pacman](https://wiki.archlinux.org/index.php/pacman) and for Debian/Ubuntu distros [apt](https://en.wikipedia.org/wiki/APT_(Package_Manager)). In this tutorial we will be using a computer with MacOS, however the tutorial will be focused for Ubuntu Linux.
 
+Before installing the dependencies it is interesting to install autotools and yasm which are in order the build tools for unix
+and an assembler.
+
+```sh
+$ sudo apt -y install yasm autotools
+```
+
+For this project we will use h264, h265 and VP9. To install them through apt invoke:
+
+```sh
+$ sudo apt -y install libx264-dev libx265-dev libvpx-dev
+```
+
 ### Generating the configure
 
 Before compiling ffmpeg the configure script needs to be invoked to setup the dependencies that you will assign to the lib. For information on what can be passed to the configure call.
@@ -48,3 +61,40 @@ Before compiling ffmpeg the configure script needs to be invoked to setup the de
 ```sh
 $ ./configure --help
 ```
+
+Now we can enable or disable dependencies for this simple tutorial we will use the codecs cited above.
+
+```sh
+$ ./configure --enable-gpl --enable-libx264 --enable-libx265 --enable-libvpx
+```
+
+After the configure is executed a large output will appear on the terminal you can read it and check if the dependencies you have enabled/disabled have been set appropriately. You can also see the license of the build at the bottom of the file.
+
+### Compiling
+
+To compile invoke make at the root of the project. To accelerate the build invoke make with the -j option which indicates the amount of threads to use while compiling which, by default is one. I will use 4 thread as my computer has 4 cores.
+
+```sh
+$ make -j 4
+```
+
+### Installing
+
+To install invoke make with the install target. This will install ffmpeg headers and libs on your environment (root may be required).
+
+```sh
+$ sudo make install
+```
+
+### Validating the installation
+
+To check wether FFmpeg has been appropriately installed navigate to /usr/local/include and look for libavcodec if there are headers than it was properly installed.
+
+To finalize the installation invoke [ldconfig](http://man7.org/linux/man-pages/man8/ldconfig.8.html) to revalidate the shared libraries cache.
+
+```sh
+$ sudo ldconfig
+```
+
+
+
