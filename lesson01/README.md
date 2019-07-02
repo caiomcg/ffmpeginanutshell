@@ -37,19 +37,25 @@ use a package manager to fetch them.
 
 For MacOs there are two options [macports](https://www.macports.org/) and [homebrew](https://brew.sh/) which I recommend.
 For Linux distros the package manager depend on the distribution itself, for Fedora [Yum](https://en.wikipedia.org/wiki/Yum_(software)) is the 
-default manager, for Arch [Pacman](https://wiki.archlinux.org/index.php/pacman) and for Debian/Ubuntu distros [apt](https://en.wikipedia.org/wiki/APT_(Package_Manager)). In this tutorial we will be using a computer with MacOS, however the tutorial will be focused for Ubuntu Linux.
+default manager, for Arch [Pacman](https://wiki.archlinux.org/index.php/pacman) and for Debian/Ubuntu distros [apt](https://en.wikipedia.org/wiki/APT_(Package_Manager)). In this tutorial we will be using a computer with MacOS, however the tutorial will be focused on Ubuntu Linux.
 
-Before installing the dependencies it is interesting to install autotools and yasm which are in order the build tools for unix
+Before installing the dependencies it is interesting to install autotools and yasm which are, in order, the build tools for unix
 and an assembler.
 
 ```sh
 $ sudo apt -y install yasm autotools
 ```
 
-For this project we will use h264, h265 and VP9. To install them through apt invoke:
+For this project we will use h264, h265 and VP9. To install them through apt, invoke:
 
 ```sh
 $ sudo apt -y install libx264-dev libx265-dev libvpx-dev
+```
+
+I also recommend the use of SDL for display and for the compilation of ffplay which is a very good player built by the FFmpeg team:
+
+```sh
+$ sudo apt -y install libsdl2-dev
 ```
 
 ### Generating the configure
@@ -65,14 +71,14 @@ $ ./configure --help
 Now we can enable or disable dependencies for this simple tutorial we will use the codecs cited above.
 
 ```sh
-$ ./configure --enable-gpl --enable-libx264 --enable-libx265 --enable-libvpx
+$ ./configure --enable-gpl --enable-libx264 --enable-libx265 --enable-libvpx --enable-ffplay
 ```
 
-After the configure is executed a large output will appear on the terminal you can read it and check if the dependencies you have enabled/disabled have been set appropriately. You can also see the license of the build at the bottom of the file.
+After the configure is executed a large output will appear on the terminal you can read it and check if the dependencies you have enabled/disabled have been set appropriately. You can also see the license of the build at the bottom of the output.
 
 ### Compiling
 
-To compile invoke make at the root of the project. To accelerate the build invoke make with the -j option which indicates the amount of threads to use while compiling which, by default is one. I will use 4 thread as my computer has 4 cores.
+To compile invoke make at the root of the project. To accelerate the build invoke make with the -j option which indicates the amount of threads to use while compiling which by default is one. I will use 4 thread as my computer has 4 cores.
 
 ```sh
 $ make -j 4
@@ -80,7 +86,7 @@ $ make -j 4
 
 ### Installing
 
-To install invoke make with the install target. This will install ffmpeg headers and libs on your environment (root may be required).
+To install, invoke make with the install target. This will install ffmpeg headers, libs and executables on your environment (root may be required).
 
 ```sh
 $ sudo make install
@@ -95,6 +101,3 @@ To finalize the installation invoke [ldconfig](http://man7.org/linux/man-pages/m
 ```sh
 $ sudo ldconfig
 ```
-
-
-
