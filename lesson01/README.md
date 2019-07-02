@@ -13,8 +13,38 @@ github that can be found [here](https://github.com/FFmpeg/FFmpeg).
 On the github page you can look at the releases list as shown in the following image.
 ![Image 01](https://github.com/caiomcg/ffins/blob/master/images/ffmpeg-repo-home.png)
 
-For this tutorial we will use the most recent release (4.1.3) as shown in the image below.
+For this tutorial we will use the most recent release **(4.1.3)** as shown in the image below.
 ![Image 02](https://github.com/caiomcg/ffins/blob/master/images/ffmpeg-repo-releases.png)
 
-The Zip or Tar version of the release can be download directly through this website, however cloning the github project
-and moving to the tag is the recommended way of doing it
+The Zip or Tar version of the release can be downloaded directly from the github page, however cloning the github project
+and moving to the tag is the recommended way of doing it.
+
+```sh
+$ git clone --branch 'release/4.1' https://github.com/FFmpeg/FFmpeg ffmpeg 
+```
+
+This will create a directory called ffmpeg on your system.
+
+## Downloading the dependencies
+
+The dependencies of the project lean on the type of application you will build, note that the license
+may change depending on what is enable during the configuration period. An FFmpeg build with GPL V3 may
+taint the code that you will be developing making it open source which may not be what you want. For
+commercial use focus on an FFmpeg version using LGPL V3.
+
+The dependencies can be downloaded and compiled manually from their project repositories but, for simplicity we will
+use a package manager to fetch them.
+
+For MacOs there are two options [macports](https://www.macports.org/) and [homebrew](https://brew.sh/) which I recommend.
+For Linux distros the package manager depend on the distribution itself, for Fedora [Yum](https://en.wikipedia.org/wiki/Yum_(software)) is the 
+default manager, for Arch [Pacman](https://wiki.archlinux.org/index.php/pacman) and for Debian/Ubuntu distros [apt](https://en.wikipedia.org/wiki/APT_(Package_Manager)). In this tutorial we will be using a computer with MacOS, however the tutorial will be focused for Ubuntu Linux.
+
+### Generating the configure
+
+Before compiling ffmpeg the configure script needs to be invoked to setup the dependencies that you will assign to the lib. For information on what can be passed to the configure call.
+
+**DO NOT FORGET TO MOVE TO THE FFMPEG FOLDER**
+
+```sh
+$ ./configure --help
+```
