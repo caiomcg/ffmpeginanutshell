@@ -10,12 +10,11 @@ system you are using. This tutorial will focus on unix systems, in particular Ma
 It is important to download the appropriate version from the sources, FFmpeg has its own repository with a mirror on
 github that can be found [here](https://github.com/FFmpeg/FFmpeg).
 
-On the github page you can look at the releases list as shown in the Image 01.
-
-
+On the github page you can look at the releases list as shown in the following image.
+![Image 01](https://github.com/caiomcg/ffins/blob/master/images/ffmpeg-repo-home.png)
 
 For this tutorial we will use the most recent release (4.1.3) as shown in the image below.
-
+![Image 02](https://github.com/caiomcg/ffins/blob/master/images/ffmpeg-repo-releases.png)
 
 The Zip or Tar version of the release can be download directly through this website, however cloning the github project
 and moving to the tag is the recommended way of doing it
