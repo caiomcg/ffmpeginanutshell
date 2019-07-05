@@ -7,10 +7,10 @@ compiler:
     - clang
 before_install:
     - sudo apt-get update
-    - sudo apt-get install -y g++-8
+    - sudo apt-get install -y g++-7
 
 install:
-    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
 
 script:
     - make all
