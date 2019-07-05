@@ -43,6 +43,14 @@ of network protocol is in use, who is using, for how long it's in use and many m
 
 GDB and LLDB are two verify similar debugging tools for C++ and many other languages. It is important to learn how to use a debugger to find obscure segmentation faults or stack overflows. I find both of these easy to use, however, in certain ocasions, specially when there is a lot of parallelism in your application LLDB can be more user-friendly.
 
+### Below is an execution of GDB
+
+![ffprobe](../images/gdb.gif)
+
+### Below is an execution of LLDB
+
+![ffprobe](../images/lldb.gif)
+
 ## Python
 
 Python is an extremely important language, it is multi-purpose, can be easily extended with a variety of libraries and is very simple to grasp onto. Python is the ultimate tool for simple and fast automation, however when you need performance you can't count on it every time. Yet python will be your go to language when trying to validate a solution. Maybe you are trying to test UDP multicast messages and are thinking of using netcat for it, I am sorry to inform you but that's
