@@ -23,37 +23,7 @@ and don't really know if the codec or the framerate is what our code expects, th
 an output of ffprobe so you can have a look on the amount of information it gives you. For this particular input we can see that we use an MP4 container with one h.264 video stream with Full HD resolution
 and an approximate 24 fps of frame rate, we can also see an AAC audio stream.
 
-```sh
-$ ffprobe video1_1.mp4 
-
-ffprobe version N-93387-gdef18ac43b Copyright (c) 2007-2019 the FFmpeg developers
-  built with gcc 7 (Ubuntu 7.3.0-27ubuntu1~18.04)
-  configuration: --enable-libfreetype --enable-gpl --enable-libx264 --enable-libvpx --enable-shared --enable-ffplay
-  libavutil      56. 26.100 / 56. 26.100
-  libavcodec     58. 47.103 / 58. 47.103
-  libavformat    58. 26.101 / 58. 26.101
-  libavdevice    58.  6.101 / 58.  6.101
-  libavfilter     7. 48.100 /  7. 48.100
-  libswscale      5.  4.100 /  5.  4.100
-  libswresample   3.  4.100 /  3.  4.100
-  libpostproc    55.  4.100 / 55.  4.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'video1_1.mp4':
-  Metadata:
-    major_brand     : mp42
-    minor_version   : 0
-    compatible_brands: mp42mp41
-    creation_time   : 2018-11-22T08:40:44.000000Z
-  Duration: 00:05:29.33, start: 0.000000, bitrate: 1414 kb/s
-    Stream #0:0(eng): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1920x1080, 1090 kb/s, 23.98 fps, 23.98 tbr, 24k tbn, 47.95 tbc (default)
-    Metadata:
-      creation_time   : 2018-11-22T08:40:44.000000Z
-      handler_name    : ?Mainconcept Video Media Handler
-      encoder         : AVC Coding
-    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 317 kb/s (default)
-    Metadata:
-      creation_time   : 2018-11-22T08:40:45.000000Z
-      handler_name    : #Mainconcept MP4 Sound Media Handler
-```
+![ffrpobe](../images/ffrpobe.svg)
 
 ## netcat
 
