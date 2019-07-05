@@ -23,7 +23,7 @@ and don't really know if the codec or the framerate is what our code expects, th
 an output of ffprobe so you can have a look on the amount of information it gives you. For this particular input we can see that we use an MP4 container with one h.264 video stream with Full HD resolution
 and an approximate 24 fps of frame rate, we can also see an AAC audio stream.
 
-![ffprobe](../images/prober.gif)
+![ffprobe](../images/ffprobe.gif)
 
 ## netcat
 
