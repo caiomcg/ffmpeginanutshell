@@ -55,10 +55,6 @@ else
 CFLAGS += -DNDEBUG
 endif
 
-# ALL SHOULD BE REMOVED
-all:
-    @echo "Placeholder"
-
 $(TARGET): $(OBJECTS)
 	@mkdir -p $(TARGETDIR)
 	@echo  "Linking all targets..."
