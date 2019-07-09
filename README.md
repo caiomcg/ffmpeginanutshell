@@ -1,6 +1,6 @@
 # FFmpeg in a nutshell
 
-[![Build Status](https://travis-ci.org/caiomcg/ffins.svg?branch=master)](https://https://travis-ci.org/caiomcg/ffins)
+[![Build Status](https://travis-ci.org/caiomcg/ffmpeginanutshell.svg?branch=master)](https://travis-ci.org/caiomcg/ffmpeginanutshell)
 
 This project is a simple tutorial on how to setup and use FFmpeg. Use the menu below to navigate through the project
 
