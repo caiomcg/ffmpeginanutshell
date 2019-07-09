@@ -11,6 +11,9 @@ This project is a simple tutorial on how to setup and use FFmpeg. Use the menu b
 5. [Lesson 05 - How to improve the application](https://github.com/caiomcg/ffins/tree/master/lesson05)
 
 
+## Template project
+[https://github.com/caiomcg/ffmpeg-template](https://github.com/caiomcg/ffmpeg-template)
+
 ## Contributors
 
 * Caio Marcelo Campoy Guedes <caiomcg@gmail.com>
